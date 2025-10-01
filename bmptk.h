@@ -183,7 +183,7 @@ Result LoadBMP(uint8_t const* _memory, BitmapFile* _bmpFile)
 
 PixelValue GetPixel(BitmapFile const* _bmpFile, uint32_t x, uint32_t y)
 {
-    uint8_t const* v = _bmpFile->pixel_data + ((y * _bmpFile->width + x) * 4);
+    uint8_t const* v = _bmpFile->pixel_data + ((y * _bmpFile->width + x) * (_bmpFile->bpp/8));
     return PixelValue{ v[2], v[1], v[0] };
 }
 
